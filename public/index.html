@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>찾아줘 | 학교 분실물 관리</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">찾아줘<span>학교 분실물 찾기</span></a>
+    <a class="admin-link" href="/admin/login">관리자</a>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">우리 학교 분실물 안내</p>
+      <h1>잃어버린 물건,<br>함께 찾아봐요.</h1>
+      <p>물건 이름을 검색하거나 새로 발견한 물건을 등록해 주세요.</p>
+    </section>
+
+    <section class="panel search-panel" aria-labelledby="search-title">
+      <h2 id="search-title">분실물 찾기</h2>
+      <form id="search-form" class="search-form">
+        <label class="sr-only" for="search-input">물건 이름 검색</label>
+        <input id="search-input" type="search" placeholder="예: 검정색 우산" autocomplete="off">
+        <button class="button button-primary" type="submit">검색</button>
+        <button class="button button-quiet" id="reset-search" type="button">전체 보기</button>
+      </form>
+    </section>
+
+    <section class="items-section" aria-labelledby="items-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LOST &amp; FOUND</p>
+          <h2 id="items-title">분실물 목록</h2>
+        </div>
+        <span id="item-count" class="count-badge">0개</span>
+      </div>
+      <p id="list-message" class="notice" role="status" aria-live="polite"></p>
+      <div id="items-list" class="item-grid"></div>
+    </section>
+
+    <section class="panel form-panel" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">등록 및 수정</p>
+          <h2 id="form-title">분실물 정보 등록</h2>
+        </div>
+      </div>
+      <p class="form-help">찾은 물건의 정보를 입력해 주세요. 이미 등록된 물건은 목록의 수정 버튼으로 고칠 수 있어요.</p>
+      <form id="item-form" class="item-form">
+        <input id="item-id" type="hidden">
+        <label>
+          물건 이름
+          <input id="item-name" name="name" maxlength="100" placeholder="예: 검정색 우산" required>
+        </label>
+        <label>
+          발견 장소
+          <input id="found-location" name="found_location" maxlength="100" placeholder="예: 2층 도서관" required>
+        </label>
+        <label>
+          보관 장소
+          <input id="storage-location" name="storage_location" maxlength="100" placeholder="예: 교무실" required>
+        </label>
+        <div class="form-actions">
+          <button id="save-item" class="button button-primary" type="submit">분실물 등록</button>
+          <button id="cancel-edit" class="button button-quiet" type="button" hidden>수정 취소</button>
+        </div>
+      </form>
+      <p id="form-message" class="notice" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">분실물이 주인을 만날 수 있도록, 찾아줘</footer>
+</body>
+</html>

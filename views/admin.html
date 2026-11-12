@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>관리자 | 찾아줘</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body>
+  <header class="admin-header">
+    <div class="site-header">
+      <a class="brand" href="/">찾아줘<span>관리자 화면</span></a>
+      <button id="logout-button" class="button button-quiet" type="button">로그아웃</button>
+    </div>
+  </header>
+  <main class="page admin-page">
+    <section class="intro">
+      <p class="eyebrow">ADMIN</p>
+      <h1>분실물 관리</h1>
+      <p>전체 분실물의 정보를 수정하거나 반환 상태를 바꾸고, 필요 없는 항목을 삭제할 수 있어요.</p>
+    </section>
+    <section aria-labelledby="admin-items-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">전체 목록</p>
+          <h2 id="admin-items-title">등록된 분실물</h2>
+        </div>
+        <span id="admin-item-count" class="count-badge">0개</span>
+      </div>
+      <p id="admin-message" class="notice" role="status" aria-live="polite"></p>
+      <div id="admin-list" class="admin-list"></div>
+    </section>
+  </main>
+</body>
+</html>
